@@ -1,0 +1,27 @@
+{
+	"csr_config": {
+		"certificate_info": {
+			"country_name": "DE",
+			"state_or_province_name": "Bayern",
+			"organization_name": "Infineon Technologies AG",
+			"common_name": "OPTIGA(TM) Trust IoT"
+		},
+		"key_info": {
+			"algorithm_id": "ec",
+			"parameters": {
+				"curve": "secp256r1",
+				"slot": "0xE0F2"
+			}
+		},
+		"signature_info": {
+			"algorithm_id": "ecdsa",
+			"parameters": {
+				"hash_alg": "sha256"
+			}
+		}
+	},
+	"aws_iot_config": {
+		"thing": "my_thing",
+		"policy": "my_policy"
+	}
+}
