@@ -54,3 +54,5 @@ This flow can be done either via a single python script, or step-by-step.
 <summary> <em> A figure showing the sequence diagram for the setup to make use of a AWS IoT PKI </em> </summary>
 <img src="https://github.com/Infineon/Assets/blob/master/Pictures/optiga_trust_m_cloud_ca_seq.jpg">
 </details>
+
+Start the personalization by following the first step: [AWS Account and Permission](step-1-aws-account-and-permissions.md)
