@@ -282,6 +282,6 @@ $ aws iot describe-endpoint
 [Top](#top)
 
 **NEXT STEP:**
-* Step 3. Generate new certeficate
+* Step 3. Generate new certificate
   * [Option a: With a single script](https://github.com/ayushev/personalize-optiga-trust/blob/master/using-amazon-root-ca/step-3a-generate-cert-script.md)
   * [Option b: Using step-by-step guidance](https://github.com/ayushev/personalize-optiga-trust/blob/master/using-amazon-root-ca/step-3b-generate-cert-step-by-step.md)
