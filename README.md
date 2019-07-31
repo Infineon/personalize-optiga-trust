@@ -5,11 +5,11 @@
 * [Summary](#summary)
 * [X.509 Certificates and Private Keys on OPTIGA™ Trust](#x509-certificates-and-private-keys-on-optiga-trust)
 * [PKI Options](#pki-options)
-    * [Default](#default)
-    * [Default with the Infineon Root ECC CA but with configurable X.509 End-Device certificates](#default-with-the-infineon-root-ecc-ca-but-with-configurable-x509-end-device-certificates)
+    * [Default PKI](#default-pki)
+    * [Default PKI with the Infineon Root ECC CA but with configurable X.509 End-Device certificates](#default-pki-with-the-infineon-root-ecc-ca-but-with-configurable-x509-end-device-certificates)
     * [Cutomer CA](#cutomer-ca)
     * [Cloud Provider CA](#cloud-provider-ca)
-    * [Infineon Intermediate CA at Customers AWS IoT Core Instance](#infineon-intermediate-ca-at-customers-aws-iot-core-instance)
+    * [OPTIGA™ Trust device Registration at Scale with AWS IoT](#optiga-trust-device-registration-at-scale-with-aws-iot)
 * [Contributing](#contributing)
 * [License](#license)
 
@@ -58,7 +58,10 @@ More about OPTIGA™ Trust X Objects Map, Access Conditions, Metadata of Objects
 
 There are many options available to personalize the security solution based on the **Order Volume** and the **Application Area**. Basic usecases are described below.
 
-### Default
+### Infineon Secure Manufacturing
+Common Criteria (CC) Certified EAL6+ (high) OPTIGA™ Trust hardware  as well as production and personalisation environment allows Infineon to become a trusted partner to store such sensitive material as Root Certificates and CAs. Special measures are taken to prevent leakage and modification of private keys at the Common Criteria Certified production site.
+
+### Default PKI
 
 If not modified by a request, the default PKI setup is **always** applied. This means one ECC NIST P-256 X.509 End-Device certificate is provisioned in the first certificate slot (0xE0E0) and one assotiated private key is in the corresponding private key slot (0xE0F0).
 
@@ -119,13 +122,13 @@ For different products (OPTIGA™ Trust X and OPTIGA™ Trust M) different Inter
 2. [OPTIGA™ Trust **X** Intermediate CA](https://github.com/Infineon/optiga-trust-x/blob/master/certificates/Infineon%20OPTIGA(TM)%20Trust%20X%20CA%20101.pem)
 3. [OPTIGA™ Trust **M** Intermediate CA](https://github.com/Infineon/optiga-trust-m/blob/master/certificates/Infineon%20OPTIGA(TM)%20Trust%20M%20CA%20101.pem)
 
-### Default with the Infineon Root ECC CA but with configurable X.509 End-Device certificates
+### Default PKI with the Infineon Root ECC CA but with configurable X.509 End-Device certificates
 
 The deafult PKI setup is taken, but a new Customer Intermediate CA is created based on customer requirements. All OPTIGA™ Trust chips then get a personalised End-Device Certificates based on this modified PKI.
 
 ### Cutomer CA
 
-A Customer decideds to use its own PKI. In this case the flow is following:
+A Customer decideds to use its own PKI. In this case the flow is below:
 
 1. Infineon generates a new keypair (public and **private keys**) for the customer
 2. Infineon constructs a Certificate Signing request (CSR)
@@ -169,9 +172,24 @@ The flow is following:
 <img src="https://github.com/Infineon/Assets/blob/master/Pictures/optiga_trust_m_cloud_ca_seq.jpg">
 </details>
   
-### Infineon Intermediate CA at Customers AWS IoT Core Instance
+### OPTIGA™ Trust device Registration at Scale with AWS IoT 
 
-A customer decides to provision all available OPTIGA™ Trust 
+#### Just-in-Time Secure Element Registration (JiTR)
+
+JiTR is a way to provision and activate any device, which belongs to a certain CA. More about this process, you can find in [this](https://aws.amazon.com/blogs/iot/just-in-time-registration-of-device-certificates-on-aws-iot) guidance.
+The flow below can give an intuition on necessary action Infineon and a customer will take to take advantage of having HSM in volume and JiTR .
+1.	Together with a customer Infineon creates a new dedicated CA issued by the Infineon Root CA
+2.	Using this new CA Infineon securely provision all the ordered OPTIGA™ Trust elements, both certificates and private keys.
+a.	The certificate has by default read-only access condition, the private key can be used only internally, for instance by signature generation.
+3.	Infineon sends the hardware to customers along with Public Key CA Certificate
+4.	The customer receives its CA certificate and initiates a CA registration procedure with AWS IoT over a secure channel (HTTPS)
+5.	AWS sends a unique registration code back to the customer over the same secure channel.
+a.	At the time of CA registration AWS IoT requests from the customer not only the CA certificate, but also a so-called registration certificate. Only the holder of the customer CA private key can generate this certificate.
+6.	The customer forwards newly received registration code to Infineon with a request to generate a registration certificate
+7.	Infineon creates a registration certificate using the registration code and sends it back to the customer
+8.	The customer uses the registration certificate to complete the CA registration procedure.
+9.	After the latter step, all OPTIGA™ powered customer devices can be connected to the AWS IoT cloud using Just-in-Time Device registration.
+
 
 <details>
 <summary> <em>  A figure showing the setup to make use of an Infineon Intermediate CA at the Cloud Provider PKI (AWS as an example) </em> </summary>
