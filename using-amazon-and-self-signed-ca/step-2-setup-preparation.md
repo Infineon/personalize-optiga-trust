@@ -239,6 +239,14 @@ _Note: for many system you need to run installation commands in a superuser mode
 * **6. Download this repository**
 Either via git or a [direct download](https://github.com/ayushev/personalize-optiga-trust/archive/master.zip) (.zip file)
 
+---
+
+ * **7. Create a softlink to the actually used i2c interface**
+OPTIGA() Trust device is searching for `/dev/optiga_trust_i2c` device, thus you need to create a softlink pointing to it. In raspberry Pi3 if you don't have other i2c connected devices the i2c-1 interface can be taken.
+
+   ```bash
+  $ ln -s /dev/i2c-1 /dev/optiga_trust_i2c
+  ```
 
 ***
 
