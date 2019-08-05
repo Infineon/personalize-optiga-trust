@@ -330,7 +330,7 @@ After performing the above steps, reboot the Raspberry Pi.
 ---
 
 * **8. Optionally select the i2c-bcm2708 I2C driver**
-  If the output of the `uname -a` produces an output which show the Linux Kernel Version older than 4.14 you might have the `i2c-bcm2835` I2C driver loaded by default. You can use `lsmod` command to see whther this is true for you. In this case you need to select another I2C driver `i2c-bcm2708`. YOu can do the following steps to perform the change
+  If the output of the `uname -a` produces an output which show the Linux Kernel Version greater than 4.14 you might have the `i2c-bcm2835` I2C driver loaded by default. You can use `lsmod` command to see whther this is true for you. In this case you need to select another I2C driver `i2c-bcm2708`. You can do the following steps to perform the change
 
   ```bash
   $ sudo nano /boot/config.txt
