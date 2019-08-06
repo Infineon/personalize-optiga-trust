@@ -343,7 +343,7 @@ After performing the above steps, reboot the Raspberry Pi.
 
 ---
 
-* **8. Create a softlink to the actually used i2c interface**
+* **7. Create a softlink to the actually used i2c interface**
 OPTIGA() Trust device is searching for `/dev/optiga_trust_i2c` device, thus you need to create a softlink pointing to it. In raspberry Pi3 if you don't have other i2c connected devices the i2c-1 interface can be taken.
 
   ```bash
