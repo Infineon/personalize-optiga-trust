@@ -1,7 +1,7 @@
 # Personalize your OPTIGA™ Trust sample
 
 * [Description](#description)
-* [Required Hardware and Software](#required-hardware)
+* [Required Hardware](#required-hardware)
 * [Summary](#summary)
 * [X.509 Certificates and Private Keys on OPTIGA™ Trust](#x509-certificates-and-private-keys-on-optiga-trust)
 * [PKI Options](#pki-options)
