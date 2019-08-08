@@ -138,7 +138,7 @@ _Note: for many system you need to run installation commands in a superuser mode
 
 
 * **6. Download this repository**
-Either via git or a [direct download](https://github.com/ayushev/personalize-optiga-trust/archive/master.zip) (.zip file)
+Either via git or a [direct download](https://github.com/infineon/personalize-optiga-trust/archive/master.zip) (.zip file)
 
 
 ## Raspberry Pi 3
@@ -197,7 +197,7 @@ _Note: for many system you need to run installation commands in a superuser mode
 
 
 * **5. Download this repository**
-Either via git or a [direct download](https://github.com/ayushev/personalize-optiga-trust/archive/master.zip) (.zip file)
+Either via git or a [direct download](https://github.com/infineon/personalize-optiga-trust/archive/master.zip) (.zip file)
 
 ---
 
@@ -427,4 +427,4 @@ $ openssl x509 -noout -text -in certs/ca.cert.pem
 ```
 ***
 
-**NEXT STEP: [Step 2. Generate a Certificate Signing Request ](https://github.com/ayushev/personalize-optiga-trust/blob/master/using-self-signed-ca/step-2-generate-new-cert-step-by-step.md)**
+**NEXT STEP: [Step 2. Generate a Certificate Signing Request ](step-2-generate-new-cert-step-by-step.md)**
