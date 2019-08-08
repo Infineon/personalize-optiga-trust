@@ -64,7 +64,7 @@ Example `config_nistp256_ecdsa_secondslot.jsn`:
 <summary>Expected output</summary>
 
 ```console
-C:\Users\Yushev\git\ayushev\personalize-optiga-trust\using-amazon-root-ca\workspace>python generate-cert-script.py
+C:\personalize-optiga-trust\using-amazon-root-ca\workspace>python generate-cert-script.py
 This is an script based OPTIGA(TM) Trust provisioning into user's AWS IoT Instance
 It will perform the following steps:
 1. Generate a Certificate Signing Request (CSR)
