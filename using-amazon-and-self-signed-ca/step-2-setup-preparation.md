@@ -88,7 +88,7 @@ $ pip3 install optigatrust
 ---
 
 **5. Download this repository**
-Either via git or a [direct download](https://github.com/ayushev/personalize-optiga-trust/archive/master.zip) (.zip file)
+Either via git or a [direct download](https://github.com/infineon/personalize-optiga-trust/archive/master.zip) (.zip file)
 
 ***
 
@@ -165,7 +165,7 @@ _Note: for many system you need to run installation commands in a superuser mode
 
 
 * **7. Download this repository**
-Either via git or a [direct download](https://github.com/ayushev/personalize-optiga-trust/archive/master.zip) (.zip file)
+Either via git or a [direct download](https://github.com/infineon/personalize-optiga-trust/archive/master.zip) (.zip file)
 
 
 ***
@@ -237,7 +237,7 @@ _Note: for many system you need to run installation commands in a superuser mode
 
 
 * **6. Download this repository**
-Either via git or a [direct download](https://github.com/ayushev/personalize-optiga-trust/archive/master.zip) (.zip file)
+Either via git or a [direct download](https://github.com/infineon/personalize-optiga-trust/archive/master.zip) (.zip file)
 
 ---
 
@@ -546,4 +546,4 @@ $ aws iot list-ca-certificates
 
 [Refer to AWS Documentation for steps to register your CA certificate to AWS](https://docs.aws.amazon.com/iot/latest/developerguide/device-certs-your-own.html)
 
-**NEXT STEP: [Step 3. Generate a Certificate Signing Request ](https://github.com/ayushev/personalize-optiga-trust/blob/master/using-amazon-and-self-signed-ca/step-3-generate-new-cert-step-by-step.md)**
+**NEXT STEP: [Step 3. Generate a Certificate Signing Request ](step-3-generate-new-cert-step-by-step.md)**
