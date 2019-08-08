@@ -69,7 +69,7 @@ $ pip3 install optigatrust
 
 
 **4. Download this repository**
-Either via git or a [direct download](https://github.com/ayushev/personalize-optiga-trust/archive/master.zip) (.zip file)
+Either via git or a [direct download](https://github.com/infineon/personalize-optiga-trust/archive/master.zip) (.zip file)
 
 ***
 
