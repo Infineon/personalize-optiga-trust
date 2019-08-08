@@ -251,7 +251,7 @@ _Note: for many system you need to run installation commands in a superuser mode
 
 
 * **5. Download this repository**
-Either via git or a [direct download](https://github.com/ayushev/personalize-optiga-trust/archive/master.zip) (.zip file)
+Either via git or a [direct download](https://github.com/infineon/personalize-optiga-trust/archive/master.zip) (.zip file)
 
 ---
 
@@ -379,5 +379,5 @@ $ aws iot describe-endpoint
 
 **NEXT STEP:**
 * Step 3. Generate new certificate
-  * [Option a: With a single script](https://github.com/ayushev/personalize-optiga-trust/blob/master/using-amazon-root-ca/step-3a-generate-cert-script.md)
-  * [Option b: Using step-by-step guidance](https://github.com/ayushev/personalize-optiga-trust/blob/master/using-amazon-root-ca/step-3b-generate-cert-step-by-step.md)
+  * [Option a: With a single script](https://github.com/infineon/personalize-optiga-trust/blob/master/using-amazon-root-ca/step-3a-generate-cert-script.md)
+  * [Option b: Using step-by-step guidance](step-3b-generate-cert-step-by-step.md)
