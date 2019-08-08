@@ -219,4 +219,4 @@ Certificate has been written
 ```
 </details>
 
-**NEXT STEP: [Step 4. Adding a Thing and Policy to AWS IoT Registry ](https://github.com/ayushev/personalize-optiga-trust/blob/master/using-amazon-and-self-signed-ca/step-4-attach-aws-thing-and-policy.md)**
+**NEXT STEP: [Step 4. Adding a Thing and Policy to AWS IoT Registry ](step-4-attach-aws-thing-and-policy.md)**
