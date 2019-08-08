@@ -34,4 +34,4 @@ Note: If you previously signed in to the AWS Management Console using AWS accoun
 
 For more information about IAM and user accounts, see [IAM User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/). For more information about policies, see [IAM Permissions and Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction_access-management.html).
 
-**NEXT STEP: [Step 2. Setup preparation](https://github.com/ayushev/personalize-optiga-trust/blob/master/using-amazon-and-self-signed-ca/step-2-setup-preparation.md)**
+**NEXT STEP: [Step 2. Setup preparation](https://github.com/infineon/personalize-optiga-trust/blob/master/using-amazon-and-self-signed-ca/step-2-setup-preparation.md)**
