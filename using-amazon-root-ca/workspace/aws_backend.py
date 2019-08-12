@@ -67,7 +67,7 @@ class AwsiotViaShell:
 		return list_policies
 
 	def _is_policy_exist(self, policy_name):
-		if next(item for item in self.list_policies['policies'] if item["policyName"] == policy_name):
+		if next((item for item in self.list_policies['policies'] if item["policyName"] == policy_name), None):
 			return True
 		else:
 			return False
