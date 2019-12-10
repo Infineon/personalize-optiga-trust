@@ -31,7 +31,7 @@ In this guide you may find the following examples:
 * [Issue a certificate from Amazon Root CA for AWS IoT](using-amazon-root-ca)
    * How to issue a certificate for an OPTIGA™ Trust sample using a Certificate Signing Request (CSR), Amazon Root CA and your AWS IoT instance
    * How to provision/register an OPTIGA™ Trust at your AWS IoT instance
-* [Issue a certificate from a user-owned CA for AWS IoT](using-amazon-self-signed-ca)
+* [Issue a certificate from a user-owned CA for AWS IoT](using-amazon-and-self-signed-ca)
    * How to issue your own self-signed CA certificate with OpenSSL
    * How to generate a Certificate Signing Request (CSR) with OPTIGA™ Trust and sign it with the CA
    * How to register your new CA on your AWS IoT Instance
