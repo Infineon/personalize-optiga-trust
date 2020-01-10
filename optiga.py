@@ -9,15 +9,15 @@ from optigatrust.pk import *
 from optigatrust.x509 import *
 
 private_key_slot_map = {
-    'second': KeyId.USER_PRIVKEY_1,
-    '0xE0E1': KeyId.USER_PRIVKEY_1,
-    '0xE0F1': KeyId.USER_PRIVKEY_1,
-    'third': KeyId.USER_PRIVKEY_2,
-    '0xE0E2': KeyId.USER_PRIVKEY_2,
-    '0xE0F2': KeyId.USER_PRIVKEY_2,
-    'fourth': KeyId.USER_PRIVKEY_3,
-    '0xE0E3': KeyId.USER_PRIVKEY_3,
-    '0xE0F3': KeyId.USER_PRIVKEY_3
+    'second': KeyId.ECC_KEY_E0F1,
+    '0xE0E1': KeyId.ECC_KEY_E0F1,
+    '0xE0F1': KeyId.ECC_KEY_E0F1,
+    'third': KeyId.ECC_KEY_E0F2,
+    '0xE0E2': KeyId.ECC_KEY_E0F2,
+    '0xE0F2': KeyId.ECC_KEY_E0F2,
+    'fourth': KeyId.ECC_KEY_E0F3,
+    '0xE0E3': KeyId.ECC_KEY_E0F3,
+    '0xE0F3': KeyId.ECC_KEY_E0F3
 }
 
 certificate_slot_map = {

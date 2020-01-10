@@ -14,15 +14,15 @@ from optigatrust.pk import *
 from optigatrust.x509 import *
 
 private_key_slot_map = {
-	'second': KeyId.USER_PRIVKEY_1,
-	'0xE0E1': KeyId.USER_PRIVKEY_1,
-	'0xE0F1': KeyId.USER_PRIVKEY_1,
-	'third': KeyId.USER_PRIVKEY_2,
-	'0xE0E2': KeyId.USER_PRIVKEY_2,
-	'0xE0F2': KeyId.USER_PRIVKEY_2,
-	'fourth': KeyId.USER_PRIVKEY_3,
-	'0xE0E3': KeyId.USER_PRIVKEY_3,
-	'0xE0F3': KeyId.USER_PRIVKEY_3
+	'second': KeyId.ECC_KEY_E0F1,
+	'0xE0E1': KeyId.ECC_KEY_E0F1,
+	'0xE0F1': KeyId.ECC_KEY_E0F1,
+	'third': KeyId.ECC_KEY_E0F2,
+	'0xE0E2': KeyId.ECC_KEY_E0F2,
+	'0xE0F2': KeyId.ECC_KEY_E0F2,
+	'fourth': KeyId.ECC_KEY_E0F3,
+	'0xE0E3': KeyId.ECC_KEY_E0F3,
+	'0xE0F3': KeyId.ECC_KEY_E0F3
 }
 
 certificate_slot_map = {
@@ -89,12 +89,14 @@ def register_certificate(aws_instance, config_file, _slot):
 				format(private_key_slot_map, cfg['key_info']['parameters']['slot'])
 			)
 		_key_id_slot = private_key_slot_map[cfg['key_info']['parameters']['slot']]
-
+	
 	ecc_key = ecc.generate_keypair(cfg['key_info']['parameters']['curve'], _key_id_slot)
-
+	
 	builder = csr.Builder(cfg['certificate_info'], ecc_key)
 
 	_csr_request = base64.b64encode(builder.build(ecc_key).dump())
+	
+	print(_csr_request.decode())
 
 	csr_request = '-----BEGIN CERTIFICATE REQUEST-----\n'
 	csr_request += _break_apart(_csr_request.decode(), '\n', 64)
