@@ -28,7 +28,7 @@ Important:
 The digital certificate used to identify the public key is stored in OID **0xE0E1** and the private key is stored in OID **0xE0F1**.
 
 ### Hardware Required
-* An unlocked OPTIGA™ Trust X/M or [Infineon Trust X Shield2Go](https://www.infineon.com/cms/en/product/evaluation-boards/s2go-security-optiga-x/)/[Infineon Trust M Shield2Go](https://www.infineon.com/cms/en/product/evaluation-boards/s2go-security-optiga-M/)
+* An unlocked OPTIGA™ Trust X/M or [Infineon Trust X Shield2Go](https://www.infineon.com/cms/en/product/evaluation-boards/s2go-security-optiga-x/)/[Infineon Trust M Shield2Go](https://www.infineon.com/cms/en/product/evaluation-boards/s2go-security-optiga-m/)
 * OPTIGA™ Trust Personalisation Board or FTDI FT260S/Q(TSSOP/WQFN) USB-to-I2C bridge.
 * FTDI D2XX Driver [Driver for Windows](https://www.ftdichip.com/Drivers/D2XX.htm)
 * Windows 7 OS and above. Note: Windows XP is not supported.
