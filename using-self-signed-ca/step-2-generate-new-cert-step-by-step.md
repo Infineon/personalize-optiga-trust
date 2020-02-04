@@ -192,7 +192,7 @@ The use the following command to write the certificate into the chip.
 $python ../../../../optiga.py --write <name-of-your-csr-eg-47478ea636328de8488a50236e79aa40720afc6f>.pem --slot second
 ```
 * `--write` Write provided data to the chip. In this case the certificate
-* `--slot` Use one the predifined slots; e.g. `second`
+* `--slot` Use one the predifined slots; e.g. `second`. Note: for RSA based certificates you have to use slots 'five' and 'six'
 
 <details>
 <summary>Expected Output</summary>
