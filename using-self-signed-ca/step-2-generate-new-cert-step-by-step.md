@@ -184,6 +184,9 @@ Data Base Updated
 
 # Upload the resulting certificate on the OPTIGA™ Trust chip
 
+Discard the content of the `.pem` file till the line `-----BEGIN CERTIFICATE-----`.
+The use the following command to write the certificate into the chip.
+
 ```console
 $python ../../../../optiga.py --write <name-of-your-csr-eg-47478ea636328de8488a50236e79aa40720afc6f>.pem --slot second
 ```
