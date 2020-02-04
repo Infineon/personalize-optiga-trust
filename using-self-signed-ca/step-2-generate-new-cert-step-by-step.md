@@ -135,7 +135,7 @@ verify OK
 
 ```console
 $ cd root/ca
-$ openssl ca -config root_openssl.cnf -extensions usr_cert -policy policy_loose -in <name-of-your-csr-eg-47478ea636328de8488a50236e79aa40720afc6f>.csr -out <name-of-your-csr-eg-47478ea636328de8488a50236e79aa40720afc6f>.pem
+$ openssl ca -config root_openssl.cnf -extensions usr_cert -policy policy_loose -in ../../<name-of-your-csr-eg-47478ea636328de8488a50236e79aa40720afc6f>.csr -out ../../<name-of-your-csr-eg-47478ea636328de8488a50236e79aa40720afc6f>.pem
 ```
 
 <deatils>
