@@ -91,7 +91,7 @@ A certificate signing request (CSR) wil be created. **Optionally**, perform a ve
 
 ```console
 #Verfies the CSR.
-$ openssl req -in root/ca/<name-of-your-csr-eg-47478ea636328de8488a50236e79aa40720afc6f>.csr -noout -text -verify
+$ openssl req -in <name-of-your-csr-eg-47478ea636328de8488a50236e79aa40720afc6f>.csr -noout -text -verify
 ```
 <details>
 <summary>Expected Output</summary>
