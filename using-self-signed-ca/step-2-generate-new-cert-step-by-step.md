@@ -136,7 +136,7 @@ verify OK
 
 ```console
 $ cd root/ca
-$ openssl ca -config root_openssl.cnf -extensions usr_cert -policy policy_loose -in ../../<name-of-your-csr-eg-47478ea636328de8488a50236e79aa40720afc6f>.csr -out ../../<name-of-your-csr-eg-47478ea636328de8488a50236e79aa40720afc6f>.pem
+$ openssl ca -config root_openssl.cnf -extensions usr_cert -policy policy_loose -in ../../<name-of-your-csr-eg-47478ea636328de8488a50236e79aa40720afc6f>.csr -out ../../<name-of-your-csr-eg-47478ea636328de8488a50236e79aa40720afc6f>.pem -notext
 ```
 
 <deatils>
@@ -184,9 +184,6 @@ Data Base Updated
 </details>
 
 # Upload the resulting certificate on the OPTIGA™ Trust chip
-
-Discard the content of the `.pem` file till the line `-----BEGIN CERTIFICATE-----`.
-The use the following command to write the certificate into the chip.
 
 ```console
 $python ../../../../optiga.py --write <name-of-your-csr-eg-47478ea636328de8488a50236e79aa40720afc6f>.pem --slot second
