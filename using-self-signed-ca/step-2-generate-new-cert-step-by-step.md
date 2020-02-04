@@ -16,7 +16,7 @@ $ python ..\..\optiga.py --csr config_nistp256_ecdsa_secondslot.jsn
 * `--quit, -q` optional, don't output the user information
 
 Here you have an option, either use one of prepared config files; e.g. `config_nistp256_ecdsa_secondslot.jsn`, or configure one based on your needs.
-Note: For the ECDSA signature hash algorithm selection is based on the curev used< e.g. `secp256r1` means zou have to use `sha256`, for the `secp384r1` the `sha384` is the selection  
+Note: For the ECDSA signature hash algorithm selection is based on the curev used< e.g. `secp256r1` means you have to use `sha256`, for the `secp384r1` the `sha384` is the selection  
 
 Example `config_nistp256_ecdsa_secondslot.jsn`:
 
@@ -51,8 +51,9 @@ Example `config_nistp256_ecdsa_secondslot.jsn`:
 ```
 
 * If you want to use another Object ID (Certificate/Private Key Slot) - modify the field "key_info"/"parameters"/"slot": "0xE0F1"
--> to the selected slot; e.g. "0xE0F1", "0xE0F2", "0xE0F3"
+-> to the selected slot; e.g. "0xE0F1" (ECC), "0xE0F2" (ECC), "0xE0F3" (ECC), "0xE0FC" (RSA), "0xE0FD" (RSA),
 * If you want to use NIST P384 curve - modify the field "key_info"/"parameters"/"curve": "secp256r1" to "secp384r1", also you need to update the used hash algorithm -  "signature_info"/"parameters"/"hash_alg": "sha256" to "sha384"
+* If you want to use RSA - modify the field "key_info"/"parameters"/"curve" to  "key_info"/"parameters"/"key_size": "1024" to "2048"
 * If you want to use another **Thing** or **Policy** consider changing names in the configuration file "aws_iot_config"/"thing": "my_thing" -> "my_new_thing", or "aws_iot_config"/"policy":"my_policy" -> "my_new_plicy". Moreover, the policy is generated based on the template 'my_policy.template', you can modify it based on your needs.
 
 <details>
