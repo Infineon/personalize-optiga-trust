@@ -16,7 +16,7 @@ $ python ..\..\optiga.py --csr config_nistp256_ecdsa_secondslot.jsn
 * `--quit, -q` optional, don't output the user information
 
 Here you have an option, either use one of prepared config files; e.g. `config_nistp256_ecdsa_secondslot.jsn`, or configure one based on your needs.
-Note: For the ECDSA signature hash algorithm selection is based on the curev used< e.g. `secp256r1` means zou have to use `sha256`, for the `secp384r1` the `sha384` is the selection  
+Note: For the ECDSA signature hash algorithm selection is based on the curev used< e.g. `secp256r1` means you have to use `sha256`, for the `secp384r1` the `sha384` is the selection  
 
 Example `config_nistp256_ecdsa_secondslot.jsn`:
 
@@ -51,8 +51,9 @@ Example `config_nistp256_ecdsa_secondslot.jsn`:
 ```
 
 * If you want to use another Object ID (Certificate/Private Key Slot) - modify the field "key_info"/"parameters"/"slot": "0xE0F1"
--> to the selected slot; e.g. "0xE0F1", "0xE0F2", "0xE0F3"
+-> to the selected slot; e.g. "0xE0F1" (ECC), "0xE0F2" (ECC), "0xE0F3" (ECC), "0xE0FC" (RSA), "0xE0FD" (RSA),
 * If you want to use NIST P384 curve - modify the field "key_info"/"parameters"/"curve": "secp256r1" to "secp384r1", also you need to update the used hash algorithm -  "signature_info"/"parameters"/"hash_alg": "sha256" to "sha384"
+* If you want to use RSA - modify the field "key_info"/"parameters"/"curve" to  "key_info"/"parameters"/"key_size": "1024" to "2048"
 * If you want to use another **Thing** or **Policy** consider changing names in the configuration file "aws_iot_config"/"thing": "my_thing" -> "my_new_thing", or "aws_iot_config"/"policy":"my_policy" -> "my_new_plicy". Moreover, the policy is generated based on the template 'my_policy.template', you can modify it based on your needs.
 
 <details>
@@ -91,7 +92,7 @@ A certificate signing request (CSR) wil be created. **Optionally**, perform a ve
 
 ```console
 #Verfies the CSR.
-$ openssl req -in root/ca/<name-of-your-csr-eg-47478ea636328de8488a50236e79aa40720afc6f>.csr -noout -text -verify
+$ openssl req -in <name-of-your-csr-eg-47478ea636328de8488a50236e79aa40720afc6f>.csr -noout -text -verify
 ```
 <details>
 <summary>Expected Output</summary>
@@ -135,7 +136,7 @@ verify OK
 
 ```console
 $ cd root/ca
-$ openssl ca -config root_openssl.cnf -extensions usr_cert -policy policy_loose -in <name-of-your-csr-eg-47478ea636328de8488a50236e79aa40720afc6f>.csr -out <name-of-your-csr-eg-47478ea636328de8488a50236e79aa40720afc6f>.pem
+$ openssl ca -config root_openssl.cnf -extensions usr_cert -policy policy_loose -in ../../<name-of-your-csr-eg-47478ea636328de8488a50236e79aa40720afc6f>.csr -out ../../<name-of-your-csr-eg-47478ea636328de8488a50236e79aa40720afc6f>.pem -notext
 ```
 
 <deatils>
@@ -188,7 +189,7 @@ Data Base Updated
 $python ../../../../optiga.py --write <name-of-your-csr-eg-47478ea636328de8488a50236e79aa40720afc6f>.pem --slot second
 ```
 * `--write` Write provided data to the chip. In this case the certificate
-* `--slot` Use one the predifined slots; e.g. `second`
+* `--slot` Use one the predifined slots; e.g. `second`. Note: for RSA based certificates you have to use slots 'five' and 'six'
 
 <details>
 <summary>Expected Output</summary>
