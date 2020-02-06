@@ -17,7 +17,11 @@ private_key_slot_map = {
     '0xE0F2': KeyId.ECC_KEY_E0F2,
     'fourth': KeyId.ECC_KEY_E0F3,
     '0xE0E3': KeyId.ECC_KEY_E0F3,
-    '0xE0F3': KeyId.ECC_KEY_E0F3
+    '0xE0F3': KeyId.ECC_KEY_E0F3,
+    'five':   KeyId.RSA_KEY_E0FC,
+    '0xE0FC': KeyId.RSA_KEY_E0FC,
+    'six':    KeyId.RSA_KEY_E0FD,
+    '0xE0FD': KeyId.RSA_KEY_E0FD
 }
 
 certificate_slot_map = {
@@ -88,7 +92,7 @@ def parse_csr(_args):
         except json.JSONDecodeError as err:
             raise IOError("The config file incorrectly composed. Parser error. "
                           "Unformated Message from parser: {0}".format(err.msg))
-
+	
     if _args.slot:
         if _args.slot not in private_key_slot_map:
             raise ValueError("--slot has been used with wrong argument, allowed values {0}, you used {1}".
@@ -100,11 +104,17 @@ def parse_csr(_args):
                              format(private_key_slot_map, cfg['key_info']['parameters']['slot']))
         _key_id_slot = private_key_slot_map[cfg['key_info']['parameters']['slot']]
 
-    ecc_key = ecc.generate_keypair(cfg['key_info']['parameters']['curve'], _key_id_slot)
+    if cfg['key_info']['algorithm_id'] == 'ec':	
+        key = ecc.generate_keypair(cfg['key_info']['parameters']['curve'], _key_id_slot)
+    elif cfg['key_info']['algorithm_id'] == 'rsa':
+        key = rsa.generate_keypair(cfg['key_info']['parameters']['key_size'], _key_id_slot)
+    else:
+        raise ValueError("unsupported algorithm_id, allowed values 'rsa', or 'ec', you used {0}".
+                        format(cfg['key_info']['algorithm_id']))
 
-    builder = csr.Builder(cfg['certificate_info'], ecc_key)
+    builder = csr.Builder(cfg['certificate_info'], key)
 
-    _csr_request = base64.b64encode(builder.build(ecc_key).dump())
+    _csr_request = base64.b64encode(builder.build(key).dump())
 
     csr_fingerprint_sha1 = hashlib.sha1(_csr_request).hexdigest()
 
@@ -117,7 +127,7 @@ def parse_csr(_args):
 
     _return_value = {
         "filename": csr_fingerprint_sha1 + ".csr",
-        "public_key": binascii.hexlify(bytearray(ecc_key.pkey)).decode()
+        "public_key": binascii.hexlify(bytearray(key.pkey)).decode()
     }
 
     if _args.query:
@@ -138,16 +148,16 @@ def parse_write(_args):
     if not _args.write:
         raise IOError('--write command is used, but no data file provided. Exit.')
 
-    if not _args.id:
+    if not _args.slot:
         _id = 'second'
     else:
-        _id = _args.id
+        _id = _args.slot
 
     if _id not in certificate_slot_map:
         raise ValueError("--id has been used with wrong argument, allowed values {0}, you used {1}".
                          format(certificate_slot_map, _id))
     _certificate_slot = certificate_slot_map[_id]
-
+	
     with open(_args.write, "r") as datafile:
         data = datafile.read()
         if not _args.quiet or _args.verbose:
@@ -181,12 +191,12 @@ parser.add_argument("--read",
                          "100 bytes: 0xf1d0-0xf1de\n"
                          "1500 bytes: 0xf1e0, 0xf1e1")
 parser.add_argument("--slot",
-                    default="second",
                     choices=[
                         # They all mean the same
                         'second', '0xe0e1', '0xe0f1',
                         'third', '0xe0e2', '0xe0f2',
-                        'fourth', '0xe0e3', '0xe0f3'
+                        'fourth', '0xe0e3', '0xe0f3',
+						'five', '0xe0fc', 'six', '0xe0fd'
                     ],
                     help="Use one the predefined slots; e.g. second, 0xe0e1, or 0xe0f1, they all mean the same")
 parser.add_argument("--id",
