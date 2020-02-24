@@ -30,17 +30,13 @@ For available PKI options you can refer to the [main document](../README.md)
 ## Personalisation flow
 
 The flow is following:
-
-
-This flow can be done either via a single python script, or step-by-step.
-
-<details>
-<summary> <em> A figure showing the setup to make use of  </em> </summary>
-</details>
-
-<details>
-<summary> <em> A figure showing the sequence diagram for the setup to make use of  </em> </summary>
-<img src="">
-</details>
+1. Connect PC/Embedded Linux to an OPTIGA™ Trust sample
+1. Create a new Certification Authority with OpenSSL and a corresponding keypair
+1. Establish a secure communication channel with a Cloud Provider; e.g. login/password
+1. Register the CA certificate on you AWS Instance
+1. Generate a keypair on the chip and export the public key
+1. Construct a Certificate Signing request (CSR)
+1. Sign the CSR with the private key of the CA
+1. Write the certificate onto the OPTIGA™ Trust hardware in the corresponding to the private key generated at step (5)
 
 ## Start the personalization by following the first step: [AWS Account and Permission](step-1-aws-account-and-permissions.md)
