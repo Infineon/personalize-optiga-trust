@@ -2,7 +2,7 @@
 
 ## Required Hardware
 For this application note you need to have:
-* OPTIGA™ Trust Personalisation Board, alternativly you can use an FTDI FT260 equiped board, such as FTDI FT260S/Q(TSSOP/WQFN) USB-to-I2C bridge
+* OPTIGA™ Trust Personalisation Board, alternativly you can use an FTDI FT260 equiped board, such as FTDI FT260S/Q(TSSOP/WQFN) USB-to-I2C bridge. __Note: This board isn't required if you use RPi__
 * OPTIGA™ Trust X or M
 
 ## Summary
