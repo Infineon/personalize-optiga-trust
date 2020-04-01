@@ -24,6 +24,11 @@ Each OPTIGA™ Trust Secure Element has four certificate slots and four (six for
    <img src="https://github.com/Infineon/Assets/raw/master/Pictures/optiga_trust_x_ac_metadata.png" >
 </details>
 
+<details>
+   <summary> <em> OPTIGA™ Trust M rev.1 Objects Map </em> </summary>
+   <img src="https://github.com/Infineon/Assets/raw/master/Pictures/optiga_trust_m_datastore_overview_v3.jpg" >
+</details>
+
 More about OPTIGA™ Trust X Objects Map, Access Conditions, Metadata of Objects you may find [here](https://github.com/Infineon/optiga-trust-x/wiki/Metadata-and-Access-Conditions)
 
 For available PKI options you can refer to the [main document](../README.md)
