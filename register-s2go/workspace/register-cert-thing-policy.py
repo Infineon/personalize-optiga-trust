@@ -9,46 +9,6 @@ import glob
 import hashlib
 from aws_backend import AwsiotViaShell
 
-from optigatrust.util.types import *
-from optigatrust.pk import *
-from optigatrust.x509 import *
-
-private_key_slot_map = {
-	'second': KeyId.ECC_KEY_E0F1,
-	'0xE0E1': KeyId.ECC_KEY_E0F1,
-	'0xE0F1': KeyId.ECC_KEY_E0F1,
-	'third': KeyId.ECC_KEY_E0F2,
-	'0xE0E2': KeyId.ECC_KEY_E0F2,
-	'0xE0F2': KeyId.ECC_KEY_E0F2,
-	'fourth': KeyId.ECC_KEY_E0F3,
-	'0xE0E3': KeyId.ECC_KEY_E0F3,
-	'0xE0F3': KeyId.ECC_KEY_E0F3
-}
-
-certificate_slot_map = {
-	'second': ObjectId.USER_CERT_1,
-	'0xE0E1': ObjectId.USER_CERT_1,
-	'0xE0F1': ObjectId.USER_CERT_1,
-	'third': ObjectId.USER_CERT_2,
-	'0xE0E2': ObjectId.USER_CERT_2,
-	'0xE0F2': ObjectId.USER_CERT_2,
-	'fourth': ObjectId.USER_CERT_3,
-	'0xE0E3': ObjectId.USER_CERT_3,
-	'0xE0F3': ObjectId.USER_CERT_3
-}
-
-
-allowed_object_ids = [
-	# Certificate Slots
-	'0xe0e0', '0xe0e1', '0xe0e2', '0xe0e3',
-	# Trust Anchor Slots
-	'0xe0e8', '0xe0ef',
-	# Arbitrary Data Objects
-	'0xf1d0', '0xf1d1', '0xf1d2', '0xf1d3', '0xf1d4', '0xf1d5', '0xf1d6', '0xf1d7',
-	'0xf1d8', '0xf1d9', '0xf1da', '0xf1db', '0xf1dc', '0xf1dd', '0xf1de',
-	'0xf1e0', '0xf1e1'
-]
-
 
 def _break_apart(f, sep, step):
 	return sep.join(f[n:n + step] for n in range(0, len(f), step))
@@ -201,13 +161,9 @@ def do_user_interface():
 	print(
 		"This is an script based OPTIGA(TM) Trust provisioning into user's AWS IoT Instance\n"
 		"It will perform the following steps:\n"
-		"1. Generate a Certificate Signing Request (CSR)\n"
-		"2. Send the CSR to the preconfigured AWS IoT Instance\n"
-		"3. Create a certificate out of CSR using AWS IoT instance as well activiating this certificate\n"
-		"4. Receive the certificate from AWS\n"
-		"5. Write back the certificate in the specified certificate slot on the security device\n"
-		"6. Create a thing or attach an exisiting thing to the newly generated certificate\n"
-		"7. Create a policy or attach an exisiting policy to the newly generated certificate\n"
+		"1. Register the certificate of your Secure Element\n"
+		"2. Create a thing or attach an exisiting thing to the newly generated certificate\n"
+		"3. Create a policy or attach an exisiting policy to the newly generated certificate\n"
 	)
 
 	print("Here are the configuration files in the directory:\n")
