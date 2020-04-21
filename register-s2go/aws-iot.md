@@ -26,7 +26,10 @@ You can follow the [the generic guidelines](https://docs.aws.amazon.com/freertos
 
 ## 2. Configuring the FreeRTOS Demos
 
-You can skip the Section "To format your AWS IoT credentials", as the required credentials are already stored on the secure element in the required format. 
+You can skip the Section "To format your AWS IoT credentials", as the required credentials are already stored on the secure element in the required format.
+
+Note: As part of this excersise, you need to update two pkcs#11 labels. The secure element uses then to understand which certificate and private keys to use for the actual secure communication. For this please update these two macroses `pkcs11configLABEL_DEVICE_PRIVATE_KEY_FOR_TLS`, `pkcs11configLABEL_DEVICE_CERTIFICATE_FOR_TLS` from `"0xE0F1"`, `"0xE0E1"` to 
+`"0xE0F0"`, `"0xE0E0"` respectively. These macroses can be found in `aws_demos/config_files/iot_pkcs11_config.h` file 
 
 ## Appendix. Registering OPTIGA™ Trust on AWS IoT
 
