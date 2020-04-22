@@ -64,9 +64,32 @@ aws iot register-certificate-without-ca --certificate-pem file://certificate.pem
 
 ### Option 2. You DON'T have the certificate from your OPTIGA™ Trust
 
-After you have registered your board, you should be able to download the certificate of the board you have. If you can't register your sample for any reason, you can try to get the certificate of your sample (Shield2Go) via the [python library](https://github.com/Infineon/python-optiga-trust). For this you need RPi3 and your OPTIGA™ Trust Sample be connected. Alternativly you can use one of OPTIGA™ personalisation boards.
+If you don't have a way to get the certificate of your OPTIGA Trust M sample, but you do have one of the following kits
+1. [OPTIGA™ Trust M evaluation kit](https://www.infineon.com/cms/en/product/evaluation-boards/optiga-trust-m-eval-kit/)
 
-<details> 
- <summary><em> Connection Example </em></summary>
- <img src="https://github.com/Infineon/Assets/raw/master/Pictures/optiga_trust_x_rpi3_setup.jpg" >
-</details>
+You can still get the certificate of your sample, for this you need to flash the kit with a prepared example (image file), and copy the output of the example in a `certificate.pem` file.
+The steps are following:
+1. Download missing components
+  * Segger J-Link tool v6.00 or greater for flashing software on XMC. [Download for Windows, Linux, Mac](https://www.segger.com/downloads/jlink/#J-LinkSoftwareAndDocumentationPack)
+  * [Tera Term](https://osdn.net/projects/ttssh2/releases/) (recommended)
+2. Flash the binary
+  * Power up the kit by connecting Micro USB cable between PC and Debugger micro USB (**X101** Port on the board).
+  * Run JFlashLite.exe from JLink installation folder. It shows a notice window. Click OK.
+  * Click on **Device** to select a target device
+    * Select Infineon as Manufacturer and Device as XMC4800-2048, and then click OK
+  * Select hex file (`bin/xmc4800_optiga_example.hex`) to be flashed under **Data File** and click on **Program Device**. It then shows the programming progress window.
+  * Flash download completed
+3. Get the output
+  Connect the USB/Serial converter cable to the Infineon Shield2Go Adapter. This allows your board to send logging and debugging information in a form that you can view on your development machine. To set up a serial connection:
+
+  * Connect the RX pin to your USB/Serial converter's TX pin.
+  * Connect the TX pin to your USB/Serial converter's RX pin.
+  * Connect your serial converter's ground pin to one of the GND pins on your board. The devices must share a common ground.
+
+  Power is supplied from the USB debugging port, so do not connect your serial adapter's positive voltage pin to the board.
+
+  Note
+  Some serial cables use a 5V signaling level. The XMC4800 board and the Wi-Fi Click module require a 3.3V. Do not use the board's IOREF jumper to change the board's signals to 5V.
+
+  With the cable connected, you can open a serial connection on a terminal emulator such as GNU Screen. The baud rate is set to 115200 by default with 8 data bits, no parity, and 1 stop bit.
+
