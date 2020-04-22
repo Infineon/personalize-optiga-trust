@@ -77,7 +77,7 @@ The steps are following:
   * Run JFlashLite.exe from JLink installation folder. It shows a notice window. Click OK.
   * Click on **Device** to select a target device
     * Select Infineon as Manufacturer and Device as XMC4800-2048, and then click OK
-  * Select hex file (`bin/xmc4800_optiga_example.hex`) to be flashed under **Data File** and click on **Program Device**. It then shows the programming progress window.
+  * Select hex file ([`xmc4800_plus_optiga_trust_m_get_certificate.hex`](https://github.com/Infineon/Assets/blob/master/Tools/xmc4800_plus_optiga_trust_m_get_certificate.hex)) to be flashed under **Data File** and click on **Program Device**. It then shows the programming progress window.
   * Flash download completed
 3. Get the output
   Connect the USB/Serial converter cable to the Infineon Shield2Go Adapter. This allows your board to send logging and debugging information in a form that you can view on your development machine. To set up a serial connection:
