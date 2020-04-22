@@ -20,7 +20,7 @@ You can follow the [the generic guidelines](https://docs.aws.amazon.com/freertos
 1. If you do not have any IoT things registered in your account, the **You don't have any things yet** page is displayed. If you see this page, choose **Register a thing**. Otherwise, choose **Create**.
 1. On the **Creating AWS IoT things** page, choose **Create a single thing**.
 1. On the **Add your device to the thing registry** page, enter a name for your thing, and then choose **Next**.
-1. Follow [the guideline](#appendix-registering-optiga-trust-on-aws-iot) below to register your secure element. After succesfull registration you should see a new certificate appear.
+1. Follow [the guideline "Registering OPTIGA™ Trust on AWS IoT"](#appendix-registering-optiga-trust-on-aws-iot) below to register your secure element. After succesfull registration you should see a new certificate appear.
 1. Select the certificate and choose **Attach a policy** to attach a policy to your certificate that grants your device access to AWS IoT operations.
 1. Choose the policy you just created and choose **Register thing**.
 
