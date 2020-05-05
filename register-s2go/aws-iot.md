@@ -77,7 +77,7 @@ The steps are following:
     * Run JFlashLite.exe from JLink installation folder. It shows a notice window. Click OK.
     * Click on **Device** to select a target device
       * Select Infineon as Manufacturer and Device as XMC4800-2048, and then click OK
-    * Select hex file ([`xmc4800_plus_optiga_trust_m_get_certificate.hex`](https://github.com/Infineon/Assets/blob/master/Tools/xmc4800_plus_optiga_trust_m_get_certificate.hex)) to be flashed under **Data File** and click on **Program Device**. It then shows the programming progress window. (You can right click and save the file)
+    * Select hex file ([`xmc4800_plus_optiga_trust_m_get_certificate.hex`](https://github.com/Infineon/Assets/raw/master/Tools/xmc4800_plus_optiga_trust_m_get_certificate.hex)) to be flashed under **Data File** and click on **Program Device**. It then shows the programming progress window. (You can right click and save the file)
 3. Get the output
     * Connect the micro USB cable between PC and micro USB (X100 Port on the board).
     * Reset the XMC4800 by pressing the reset button.
