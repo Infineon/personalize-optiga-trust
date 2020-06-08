@@ -61,6 +61,9 @@ Register your certificate with the following command
 ```
 aws iot register-certificate-without-ca --certificate-pem file://certificate.pem --status ACTIVE
 ```
+**Note: you need to use `file://` + `path_to_your_certificate_pem_file` when you point to your certificate.**
+
+**Note 2: if you work from Windows, try to use `%USERPROFILE%` to get an absolute path to your user folder, however relative paths should work as well**
 
 ### Option 2. You DON'T have the certificate from your OPTIGA™ Trust
 
