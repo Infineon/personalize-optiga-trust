@@ -219,4 +219,7 @@ Certificate has been written
 ```
 </details>
 
-**NEXT STEP: [Step 4. Adding a Thing and Policy to AWS IoT Registry ](step-4-attach-aws-thing-and-policy.md)**
+From this point there are several ways on how to proceed. In general you need now to register your newly created certificate with AWS IoT Core. There are two options for this:
+* Option 1. [Register a certificate manually](https://docs.aws.amazon.com/iot/latest/developerguide/manual-cert-registration.html). You can use for this your certificate `workspace/<name-of-your-csr-eg-47478ea636328de8488a50236e79aa40720afc6f>.pem` and the corresponding CA certificate `workspace/root/ca/certs/ca.cert.pem`. After this you can continue with the next [step](step-4-attach-aws-thing-and-policy.md).
+* Option 2: [Just-in-Time Registration](https://aws.amazon.com/de/blogs/iot/just-in-time-registration-of-device-certificates-on-aws-iot/). Which is most suitable if you expect to have many devices (certificates) to be connected to the AWS IoT Core. In this case you don't register your device certificate (generated above), but rather create an AWS Lambda script to register **all** incoming certificates which belong to the self-signed CA. 
+You can start right from the Section "Device Certificate Registration Event and Action" as actions before should be completed by your in the former steps of this readme. CA related ID should be generated as part of the [Step 2.](https://github.com/Infineon/personalize-optiga-trust/blob/master/using-amazon-and-self-signed-ca/step-2-setup-preparation.md)
