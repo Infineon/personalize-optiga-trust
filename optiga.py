@@ -33,7 +33,9 @@ certificate_slot_map = {
     '0xE0F2': ObjectId.USER_CERT_2,
     'fourth': ObjectId.USER_CERT_3,
     '0xE0E3': ObjectId.USER_CERT_3,
-    '0xE0F3': ObjectId.USER_CERT_3
+    '0xE0F3': ObjectId.USER_CERT_3,
+    '0xE0E8': ObjectId.TRUST_ANCHOR_1,
+    '0xE0EF': ObjectId.TRUST_ANCHOR_2
 }
 
 object_slot_map = {
@@ -196,7 +198,8 @@ parser.add_argument("--slot",
                         'second', '0xe0e1', '0xe0f1',
                         'third', '0xe0e2', '0xe0f2',
                         'fourth', '0xe0e3', '0xe0f3',
-						'five', '0xe0fc', 'six', '0xe0fd'
+						'five', '0xe0fc', 'six', '0xe0fd',
+                        '0xE0E8', '0xE0EF'
                     ],
                     help="Use one the predefined slots; e.g. second, 0xe0e1, or 0xe0f1, they all mean the same")
 parser.add_argument("--id",
