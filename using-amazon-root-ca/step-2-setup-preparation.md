@@ -68,7 +68,7 @@ The digital certificate used to identify the public key is stored in OID **0xE0E
 * **OPTIGA™ Trust* python package**
   * Install the *optigatrust* using pip.
   ```bash
-  C:\> pip3 install optigatrust
+  C:\> pip3 install 'optigatrust==0.6.11'
   ```
 
 _**Note: The following instructions should be settled only once:**_
@@ -184,7 +184,7 @@ _Note: for many system you need to run installation commands in a superuser mode
 * **OPTIGA™ Trust* python package*
   * Install the *optigatrust* using pip.
   ```bash
-  $ pip3 install optigatrust
+  $ pip3 install 'optigatrust==0.6.11'
   ```
 
 ***
@@ -244,7 +244,7 @@ _Note: for many system you need to run installation commands in a superuser mode
 * **4. OPTIGA™ Trust python package**
   * Install the *optigatrust* using pip.
   ```bash
-  $ pip3 install optigatrust
+  $ pip3 install 'optigatrust==0.6.11'
   ``` 
 
 ---
