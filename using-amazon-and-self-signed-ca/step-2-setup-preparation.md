@@ -82,7 +82,7 @@ For this do the following:
 
 ```console
 # OPTIGA™ Trust Python package installation
-$ pip3 install optigatrust
+$ pip3 install 'optigatrust==0.6.11'
 ```
 
 ---
@@ -158,7 +158,7 @@ _Note: for many system you need to run installation commands in a superuser mode
 * **6. OPTIGA™ Trust python package**
   * Install the *optigatrust* using pip.
   ```bash
-  $ pip3 install optigatrust
+  $ pip3 install 'optigatrust==0.6.11'
   ``` 
 
 ---
@@ -230,7 +230,7 @@ _Note: for many system you need to run installation commands in a superuser mode
 * **5. OPTIGA™ Trust python package**
   * Install the *optigatrust* using pip.
   ```bash
-  $ pip3 install optigatrust
+  $ pip3 install 'optigatrust==0.6.11'
   ``` 
 
 ---
