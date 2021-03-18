@@ -62,7 +62,7 @@ pip 18.1 from c:\program files\python37\lib\site-packages\pip (python 3.7)
 
 ```console
 # OPTIGA(TM) Trust Python package installation
-$ pip3 install 'optigatrust==0.6.11'
+$ pip3 install optigatrust==0.6.11
 ``` 
 
 ---
@@ -131,7 +131,7 @@ _Note: for many system you need to run installation commands in a superuser mode
 * **5. OPTIGA(TM) Trust* python package*
   * Install the *optigatrust* using pip.
   ```bash
-  $ pip3 install 'optigatrust==0.6.11'
+  $ pip3 install optigatrust==0.6.11
   ``` 
 
 ---
@@ -190,7 +190,7 @@ _Note: for many system you need to run installation commands in a superuser mode
 * **4. OPTIGA™ Trust python package**
   * Install the *optigatrust* using pip.
   ```bash
-  $ pip3 install 'optigatrust==0.6.11'
+  $ pip3 install optigatrust==0.6.11
   ``` 
 
 ---
